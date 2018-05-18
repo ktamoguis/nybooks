@@ -97,6 +97,7 @@ class CommandLineInterface
     def display_list_orig
       i = 1
       Books.all.each do |book|
+        puts "--------------------------------------------"
         puts "Rank: #{i}"
         puts "Freshness: #{book.freshness}"
         puts "Title: #{book.title}"
@@ -111,6 +112,7 @@ class CommandLineInterface
       i = 0
       Books.all.each do |book|
         if i == book_number
+          puts "---------------------------------------------"
           puts "Rank: #{i+1}"
           puts "Freshness: #{book.freshness}"
           puts "Title: #{book.title}"
