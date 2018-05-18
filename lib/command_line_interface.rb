@@ -16,7 +16,7 @@ class CommandLineInterface
 
     def main_menu
       puts "Welcome to New York Times Best Seller Books:"
-      puts "Please select from the menu below:"
+      puts "Please select item number below:"
       puts "1. Hardcover Fiction"
       puts "2. Hardcover NonFiction"
       puts "3. Print and E-Book Fiction"
