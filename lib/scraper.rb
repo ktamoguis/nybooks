@@ -15,7 +15,7 @@ class Scraper
       author = doc.css("p.author").text
       description = doc.css("p.description").text
       freshness = doc.css("p.freshness").text
-      books << {:title => title, :author => author, :description = description, :freshness = freshness}
+      books << {:title => title, :author => author, :description => description, :freshness => freshness}
     end
     books
     binding.pry
@@ -25,6 +25,6 @@ class Scraper
     #author = webpage.css("ol.book-menu div.book-body")[0].css("p.author").text
     #description = webpage.css("ol.book-menu div.book-body")[0].css("p.description").text
 
-  
+
 
 end
