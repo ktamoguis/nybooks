@@ -4,10 +4,11 @@ require 'pry'
 class CommandLineInterface
 
   BASEPATH = "https://www.nytimes.com/books/best-sellers/hardcover-fiction/"
+  BASEPATH2 = "https://www.nytimes.com/books/best-sellers/hardcover-nonfiction/"
 
     def run
-      main_menu
-      #generate_book_list
+      #main_menu
+      generate_book_list
     end
 
     def main_menu
@@ -42,15 +43,11 @@ class CommandLineInterface
     end
 
     def display_booklist
-      #puts "display all stocks"
-      stockhash = {:name =>"GOOG"}
-      .new(stockhash).display_all_stocks
-      second_menu
     end
 
 
-    def generate_stock_info
-      bookarray = Scraper.scrape_page(BASEPATH)
+    def generate_book_list
+      Scraper.scrape_page(BASEPATH)
     end
 
 end
