@@ -26,6 +26,9 @@ Or install it yourself as:
 
 Run the program and just follow the instructions. When trying to exit in the main_menu, type the no. 5.
 
+    $ nybooks
+
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
