@@ -4,6 +4,8 @@ Welcome to your new gem! In this directory, you'll find the files you need to be
 
 TODO: Delete this and the text above, and describe your gem
 
+This is a Command Line Interface (CLI) app that accesses the New York Times Best Seller list. The user is given a top best sellers according to category.  After selecting a category, the user can select a book and the app will show to him/her the book's details. The user can go back to the main menu or select another book or just exit the program
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -22,7 +24,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Run the program and just follow the instructions. When trying to exit in the main_menu, type the no. 5.
 
 ## Development
 
