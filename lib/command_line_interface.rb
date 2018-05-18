@@ -5,6 +5,9 @@ class CommandLineInterface
 
   BASEPATH1 = "https://www.nytimes.com/books/best-sellers/hardcover-fiction/"
   BASEPATH2 = "https://www.nytimes.com/books/best-sellers/hardcover-nonfiction/"
+  BASEPATH3 = "https://www.nytimes.com/books/best-sellers/combined-print-and-e-book-fiction/"
+  BASEPATH4 = "https://www.nytimes.com/books/best-sellers/combined-print-and-e-book-nonfiction/"
+
 
     def run
       main_menu
@@ -12,11 +15,13 @@ class CommandLineInterface
     end
 
     def main_menu
-      puts "Welcome to NY Best Seller Books:"
+      puts "Welcome to New York Times Best Seller Books:"
       puts "Please select from the menu below:"
       puts "1. Hardcover Fiction"
       puts "2. Hardcover NonFiction"
-      puts "3. Exit"
+      puts "3. Print and E-Book Fiction"
+      puts "4. Print and E-Book NonFiction"
+      puts "5. Exit"
       input = gets.strip
       #binding.pry
       case input.to_i
@@ -32,7 +37,21 @@ class CommandLineInterface
         generate_book_list(BASEPATH2)
         display_list
         second_menu
+      when 3 #Combined fiction
+        puts "NY Times Bestseller List: Print and E-Book Fiction"
+        puts "--------------------------------------------------"
+        generate_book_list(BASEPATH3)
+        display_list
+        second_menu
+      when 4 #Combined nonfiction
+        puts "NY Times Bestseller List: Print and E-Book NonFiction"
+        puts "----------------------------------------------------"
+        generate_book_list(BASEPATH4)
+        display_list
+        second_menu
+      when 5
       else
+          main_menu
       end
     end
 
