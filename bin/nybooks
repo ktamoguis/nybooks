@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require_relative "../lib/nybooks/nybooks.rb"
+require_relative "../lib/nybooks.rb"
 
 CommandLineInterface.new.run

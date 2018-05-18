@@ -1,6 +1,3 @@
-require 'nokogiri'
-require 'pry'
-
 class CommandLineInterface
 
   BASEPATH1 = "https://www.nytimes.com/books/best-sellers/hardcover-fiction/"
