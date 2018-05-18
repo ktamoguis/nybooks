@@ -1,6 +1,6 @@
 # Nybooks
 
-This is a Command Line Interface (CLI) app that accesses the New York Times Best Seller list. The user is given a top best sellers according to category.  After selecting a category, the user can select a book and the app will show to him/her the book's details. The user can go back to the main menu or select another book or just exit the program
+This is a Command Line Interface (CLI) app that accesses the New York Times Best Seller list. The user is given top best sellers according to category.  After selecting a category, the user can select a book and the app will show to him/her the book's details. The user can go back to the main menu or select another book or just exit the program
 
 ## Installation
 
