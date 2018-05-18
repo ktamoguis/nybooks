@@ -3,12 +3,13 @@ require 'pry'
 
 class CommandLineInterface
 
-  BASEPATH = "https://www.nytimes.com/books/best-sellers/hardcover-fiction/"
+  BASEPATH1 = "https://www.nytimes.com/books/best-sellers/hardcover-fiction/"
   BASEPATH2 = "https://www.nytimes.com/books/best-sellers/hardcover-nonfiction/"
 
     def run
-      #main_menu
-      generate_book_list
+      main_menu
+      second_menu
+      goodbye
     end
 
     def main_menu
@@ -20,11 +21,15 @@ class CommandLineInterface
       input = gets.strip
       #binding.pry
       case input.to_i
-      when 1
-        #generate_book_list1
+      when 1 #Hardcover fiction
+        puts "NY Times Bestseller List: Hardcover Fiction"
+        generate_book_list(BASEPATH1)
+        display_list
         second_menu
-      when 2
-        #generate_book_list2
+      when 2 #Hardcover nonfiction
+        puts "NY Times Bestseller List: Hardcover NonFiction"
+        generate_book_list(BASEPATH2)
+        display_list
         second_menu
       else
       end
@@ -42,12 +47,21 @@ class CommandLineInterface
 
     end
 
-    def display_booklist
+    def generate_book_list(path)
+      booklist = Scraper.scrape_page(path) #array of hashes
+      Books.clear
+      Books.create_from_collection(booklist)
     end
 
-
-    def generate_book_list
-      Scraper.scrape_page(BASEPATH)
+    def display_list
+      Books.all each do |book|
+        puts "Rank: #{book.}"
+        puts "Freshness: #{book.freshness}"
+        puts "Title: #{book.title}"
+        puts "Author: #{book.author}"
+        puts "Description: #{book.description}"
+        puts "---------------------------"
+      end
     end
 
 end
