@@ -1,4 +1,5 @@
 #require "nybooks/version"
+require_relative "../nybooks/version"
 require_relative "../nybooks/command_line_interface.rb"
 require_relative "../nybooks/scraper.rb"
 require 'pry'
