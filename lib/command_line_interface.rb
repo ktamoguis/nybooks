@@ -54,14 +54,20 @@ class CommandLineInterface
     end
 
     def display_list
-      Books.all each do |book|
-        puts "Rank: #{book.}"
+      i = 1
+      Books.all.each do |book|
+        puts "Rank: #{i}"
         puts "Freshness: #{book.freshness}"
         puts "Title: #{book.title}"
         puts "Author: #{book.author}"
         puts "Description: #{book.description}"
         puts "---------------------------"
+        i +=1
       end
+    end
+
+    def goodbye
+      puts "Thanks for checking the list(s). Goodbye!"
     end
 
 end
