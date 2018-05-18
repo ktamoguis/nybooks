@@ -8,17 +8,21 @@ class Scraper
 
   def self.scrape_page(url)
     webpage = Nokogiri::HTML(open(url))
+    i = 0
     books = []
-    doc = webpage.css("ol.book-menu div.book-body")
-    doc.each do |book|
-      title = doc.css("h2.title").text
-      author = doc.css("p.author").text
-      description = doc.css("p.description").text
-      freshness = doc.css("p.freshness").text
-      books << {:title => title, :author => author, :description => description, :freshness => freshness}
+    doc = webpage.css("ol.book-menu div.book-body")[i]
+    while i < 14 do
+      doc.each do |book|
+        title = doc.css("h2.title").text
+        author = doc.css("p.author").text
+        description = doc.css("p.description").text
+        freshness = doc.css("p.freshness").text
+        books << {:title => title, :author => author, :description => description, :freshness => freshness}
+      end
+    i += 1
     end
     books
-    binding.pry
+    #binding.pry
   end
     #books = webpage.css("ol.book-menu div.book-body")[0]
     #title = webpage.css("ol.book-menu div.book-body")[0].css("h2.title").text
