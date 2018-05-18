@@ -56,6 +56,19 @@ class CommandLineInterface
     end
 
     def second_menu
+      puts "Select book no. or Type 'Menu' to return to main menu or Type 'Exit'"
+      input = gets.strip
+
+      if input == "Menu"
+        main_menu
+      elsif input.to_i > 0 && input.to_i <= 15
+        select_a_book(input.to_i - 1)
+      elsif input != "Exit"
+        second_menu
+      end
+    end
+
+    def second_menu_orig
       puts "Type 'Exit' or press '1' to return to main menu"
       input = gets.strip
 
@@ -76,6 +89,14 @@ class CommandLineInterface
     def display_list
       i = 1
       Books.all.each do |book|
+        puts "#{i}. #{book.title}"
+        i +=1
+      end
+    end
+
+    def display_list_orig
+      i = 1
+      Books.all.each do |book|
         puts "Rank: #{i}"
         puts "Freshness: #{book.freshness}"
         puts "Title: #{book.title}"
@@ -84,6 +105,22 @@ class CommandLineInterface
         puts "--------------------------------------------"
         i +=1
       end
+    end
+
+    def select_a_book(book_number)
+      i = 0
+      Books.all.each do |book|
+        if i == book_number
+          puts "Rank: #{i+1}"
+          puts "Freshness: #{book.freshness}"
+          puts "Title: #{book.title}"
+          puts "Author: #{book.author}"
+          puts "Description: #{book.description.strip}"
+          puts "--------------------------------------------"
+        end
+        i +=1
+      end
+      second_menu
     end
 
     def goodbye

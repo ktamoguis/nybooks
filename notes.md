@@ -14,7 +14,10 @@ Please select a list below:
 
 2nd Screen (Select 1 or 2)
 Display List
-Type "Exit" to leave or press "1" to return to main menu
+Type book no. to select a book or Type 'Menu' to return to main menu or Type 'Exit'
+
+3rd Screen(Select a book)
+Display book details
 
 
 3rd Screen(Select 3)
