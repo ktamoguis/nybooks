@@ -1,0 +1,24 @@
+PATH
+  remote: .
+  specs:
+    nybooks (0.1.0)
+      nokogiri
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    mini_portile2 (2.3.0)
+    nokogiri (1.8.2)
+      mini_portile2 (~> 2.3.0)
+    rake (10.5.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (~> 1.16)
+  nybooks!
+  rake (~> 10.0)
+
+BUNDLED WITH
+   1.16.1
