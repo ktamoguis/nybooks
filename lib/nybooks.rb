@@ -26,6 +26,10 @@ class Books
     end
   end
 
+  def self.clear
+    @@all.clear
+  end
+
   def self.all
     @@all
   end
