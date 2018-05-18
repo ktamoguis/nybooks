@@ -8,7 +8,6 @@ class CommandLineInterface
 
     def run
       main_menu
-      second_menu
       goodbye
     end
 
@@ -16,18 +15,20 @@ class CommandLineInterface
       puts "Welcome to NY Best Seller Books:"
       puts "Please select from the menu below:"
       puts "1. Hardcover Fiction"
-      puts "2. Hardcove NonFiction"
+      puts "2. Hardcover NonFiction"
       puts "3. Exit"
       input = gets.strip
       #binding.pry
       case input.to_i
       when 1 #Hardcover fiction
         puts "NY Times Bestseller List: Hardcover Fiction"
+        puts "-------------------------------------------"
         generate_book_list(BASEPATH1)
         display_list
         second_menu
       when 2 #Hardcover nonfiction
         puts "NY Times Bestseller List: Hardcover NonFiction"
+        puts "----------------------------------------------"
         generate_book_list(BASEPATH2)
         display_list
         second_menu
@@ -60,8 +61,8 @@ class CommandLineInterface
         puts "Freshness: #{book.freshness}"
         puts "Title: #{book.title}"
         puts "Author: #{book.author}"
-        puts "Description: #{book.description}"
-        puts "---------------------------"
+        puts "Description: #{book.description.strip}"
+        puts "--------------------------------------------"
         i +=1
       end
     end
