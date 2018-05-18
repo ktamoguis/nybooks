@@ -21,6 +21,7 @@ class Books
   end
 
   def self.create_from_collection(books_array)
+    #binding.pry
     books_array.each do |book|
       Books.new(book)
     end
