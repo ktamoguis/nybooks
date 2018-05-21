@@ -16,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install nybooks
+    $ sudo gem install --local nybooks-0.1.0.gem
 
 ## Usage
 
@@ -24,9 +24,6 @@ Run the program and just follow the instructions.
 
     $ nybooks
 
-If that doesn't work, after cloning https://github.com/ktamoguis/nybooks in your directory, type and follow instructions:
-
-    $ bin/nybooks
 
 ## Development
 
