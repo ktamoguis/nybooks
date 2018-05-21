@@ -20,10 +20,13 @@ Or install it yourself as:
 
 ## Usage
 
-Run the program and just follow the instructions. When trying to exit in the main_menu, type the no. 5.
+Run the program and just follow the instructions.
 
     $ nybooks
 
+If that doesn't work, after cloning https://github.com/ktamoguis/nybooks in your directory, type and follow instructions:
+
+    $ bin/nybooks
 
 ## Development
 
