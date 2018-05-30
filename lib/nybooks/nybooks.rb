@@ -1,4 +1,4 @@
-class Books
+class Nybooks::Books
 
   attr_accessor :title, :author, :description, :freshness, :index, :category;
 
@@ -20,7 +20,7 @@ class Books
 
   def self.create_from_collection(books_array)
     books_array.each do |book|
-      Books.new(book)
+      Nybooks::Books.new(book)
     end
   end
 

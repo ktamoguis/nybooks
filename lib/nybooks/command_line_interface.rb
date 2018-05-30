@@ -1,4 +1,4 @@
-class CommandLineInterface
+class Nybooks::CommandLineInterface
 
     def run
       main_menu
@@ -43,7 +43,7 @@ class CommandLineInterface
       input = gets.strip
       if input.upcase == "MENU"
         main_menu
-      elsif input.to_i > 0 && input.to_i <= Books.all.size
+      elsif input.to_i > 0 && input.to_i <= Nybooks::Books.all.size
         select_a_book(book_category,input.to_i - 1)
       elsif input.upcase != "EXIT"
         second_menu(book_category)
@@ -51,21 +51,21 @@ class CommandLineInterface
     end
 
     def generate_book_list(category_selection)
-      if Books.find_by_books_category(category_selection) == []
-        booklist = Scraper.scrape_page(category_selection)
-        Books.create_from_collection(booklist)
+      if Nybooks::Books.find_by_books_category(category_selection) == []
+        booklist = Nybooks::Scraper.scrape_page(category_selection)
+        Nybooks::Books.create_from_collection(booklist)
       end
     end
 
     def display_list(book_category)
-      Books.find_by_books_category(book_category).each_with_index do |book, index|
+      Nybooks::Books.find_by_books_category(book_category).each_with_index do |book, index|
         puts "#{index + 1}. #{book.title}"
       end
     end
 
 
     def select_a_book(book_category, book_number)
-      Books.find_by_books_category(book_category).each_with_index do |book, index|
+      Nybooks::Books.find_by_books_category(book_category).each_with_index do |book, index|
         if book.index == book_number
           puts "---------------------------------------------"
           puts "Rank: #{index + 1}"

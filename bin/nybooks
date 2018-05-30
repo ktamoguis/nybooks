@@ -2,4 +2,4 @@
 
 require_relative "../lib/nybooks.rb"
 
-CommandLineInterface.new.run
+Nybooks::CommandLineInterface.new.run

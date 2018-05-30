@@ -1,4 +1,4 @@
-class Scraper
+class Nybooks::Scraper
 
   BASEPATH1 = "https://www.nytimes.com/books/best-sellers/hardcover-fiction/"
   BASEPATH2 = "https://www.nytimes.com/books/best-sellers/hardcover-nonfiction/"
